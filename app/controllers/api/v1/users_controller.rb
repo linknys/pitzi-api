@@ -33,10 +33,14 @@ class Api::V1::UsersController < ApplicationController
 
  # DELETE /users/1
   def destroy
-   @user.destroy
+    if @user.destroy
+      render json: { status:true }, status: :ok
+    else
+      render json: { status:false }, status: :error
+    end
   end
-  private
 
+  private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
    @user = User.find(params[:id])
@@ -44,6 +48,6 @@ class Api::V1::UsersController < ApplicationController
 
   # Only allow a trusted parameter “white list” through.
   def user_params
-  params.require(:user).permit(:device_model, :imei, :anual_price, :installments)
+    params.require(:user).permit(:name, :email, :cpf)
   end
 end
