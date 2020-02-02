@@ -33,10 +33,14 @@ class Api::V1::OrdersController < ApplicationController
 
  # DELETE /orders/1
   def destroy
-   @order.destroy
+    if @order.destroy
+      render json: { status:true }, status: :ok
+    else
+      render json: { status:false }, status: :error
+    end
   end
-  private
 
+  private
   # Use callbacks to share common setup or constraints between actions.
   def set_order
    @order = Order.find(params[:id])
