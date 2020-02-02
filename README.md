@@ -1,24 +1,6 @@
-# README
+# RubyOnRails/API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Link Front: https://github.com/linknys/pitzi-front-t
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* PORT: 3000
+* PORT API:   3000
+* PORT FRONT: 3001
